@@ -37,12 +37,18 @@
     margin-right: 8px;
 }
 
+.InboxItemRow {
+    display: flex;
+    flex-direction: row;
+}
+
 .InboxItem__title {
     flex-grow: 1;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     max-width: 92%;
+    width: 200px;
 }
 
 .InboxItem__main {

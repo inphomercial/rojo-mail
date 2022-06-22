@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import MaterialIcon from 'material-icons-react'
 import moment from 'moment'
 
@@ -12,23 +12,10 @@ export function InboxItem(props) {
     const selectedEmail =
         DUMMY_EMAILS[Math.floor(Math.random() * DUMMY_EMAILS.length)]
 
-    const [text, setText] = useState('')
-    const [originalText, setOriginalText] = useState(props.title)
-    const [dummyText, setDummyText] = useState(selectedEmail)
     const [isHovering, setIsHovering] = useState(false)
 
-    useEffect(() => {
-        if (isHovering) {
-            setText(originalText)
-        } else {
-            setText(dummyText)
-        }
-    }, [isHovering])
-
     const handleClick = () => {
-        const { onItemClick } = props
-
-        onItemClick()
+        props.onItemClick()
     }
 
     const renderAttachments = () => {
@@ -76,7 +63,14 @@ export function InboxItem(props) {
                     <MaterialIcon icon="star_border" />
                 </span>
 
-                <p className="InboxItem__title">{text}</p>
+                {isHovering ? (
+                    <p className="InboxItem__title">{props.title}</p>
+                ) : (
+                    <div className="InboxItemRow">
+                        <p className="InboxItem__title">{selectedEmail.from}</p>
+                        <p className="InboxItem__body">{selectedEmail.body}</p>
+                    </div>
+                )}
 
                 <p className="InboxItem__date">{dateString}</p>
             </div>

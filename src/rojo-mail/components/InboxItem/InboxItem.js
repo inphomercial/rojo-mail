@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import MaterialIcon from 'material-icons-react'
 import moment from 'moment'
 
@@ -11,6 +11,8 @@ import './InboxItem.css'
 export function InboxItem(props) {
     const selectedEmail =
         DUMMY_EMAILS[Math.floor(Math.random() * DUMMY_EMAILS.length)]
+
+    const selectedEmailRef = useRef(selectedEmail)
 
     const [isHovering, setIsHovering] = useState(false)
 
@@ -67,8 +69,15 @@ export function InboxItem(props) {
                     <p className="InboxItem__title">{props.title}</p>
                 ) : (
                     <div className="InboxItemRow">
-                        <p className="InboxItem__title">{selectedEmail.from}</p>
-                        <p className="InboxItem__body">{selectedEmail.body}</p>
+                        <p className="InboxItem__title">
+                            {selectedEmailRef.current.from}
+                        </p>
+                        <p className="InboxItem__body">
+                            {selectedEmailRef.current.body}
+                        </p>
+                        <p className="InboxItem__sub">
+                            {selectedEmailRef.current.sub}
+                        </p>
                     </div>
                 )}
 

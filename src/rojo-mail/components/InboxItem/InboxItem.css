@@ -51,6 +51,12 @@
     width: 200px;
 }
 
+.InboxItem__sub {
+    color: #5f6368;
+    font-weight: normal;
+    text-overflow: ellipsis;
+}
+
 .InboxItem__main {
     display: flex;
     flex-direction: row;

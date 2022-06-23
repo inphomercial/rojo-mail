@@ -2,9 +2,9 @@ import React from 'react'
 
 import MaterialIcon from 'material-icons-react'
 
-import './SingleItemBar.css'
+import './EmailActionBar.css'
 
-export function SingleItemBar(props) {
+export function EmailActionBar(props) {
     const { onBack } = props
 
     return (

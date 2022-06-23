@@ -6,7 +6,7 @@ import { EmailSenderHeader } from '../EmailSenderHeader'
 
 import { Spinner } from '../Spinner'
 
-export const PostComments = (props) => {
+export const EmailComments = (props) => {
     const [comments, setComments] = useState(null)
 
     useEffect(() => {

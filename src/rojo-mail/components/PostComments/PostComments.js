@@ -4,6 +4,8 @@ import { fetchData } from '../../utils/http'
 
 import { EmailSenderHeader } from '../EmailSenderHeader'
 
+import { Spinner } from '../Spinner'
+
 export const PostComments = (props) => {
     const [comments, setComments] = useState(null)
 
@@ -15,13 +17,11 @@ export const PostComments = (props) => {
         fetchData(fullPostUrl).then((comments) => {
             setComments(comments[1].data.children)
         })
-    }, [])
+    }, [props.post])
 
     if (!comments) {
-        return <div>Loading Comments</div>
+        return <Spinner />
     }
-
-    const subredditString = `<${props.post.subreddit_name_prefixed}>`
 
     return comments.map((comment) => {
         return (

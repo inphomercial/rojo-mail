@@ -2,6 +2,7 @@ import React from 'react'
 
 import { InboxItem } from '../../components/InboxItem'
 import { InboxTopBar } from '../../components/InboxTopBar'
+import { Spinner } from '../../components/Spinner'
 
 import './Inbox.css'
 
@@ -11,7 +12,7 @@ export function Inbox(props) {
     if (!posts) {
         return (
             <div className="InboxView">
-                <h1>Future blank state view</h1>
+                <Spinner />
             </div>
         )
     }

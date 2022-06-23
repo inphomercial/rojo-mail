@@ -20,11 +20,7 @@ export const PostComments = (props) => {
     }, [props.post])
 
     if (!comments) {
-        return (
-            <div>
-                <Spinner />
-            </div>
-        )
+        return <Spinner />
     }
 
     return comments.map((comment) => {

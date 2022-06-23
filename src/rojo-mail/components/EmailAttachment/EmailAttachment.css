@@ -1,0 +1,103 @@
+.EmailAttachment {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #dbdbdb;
+    cursor: pointer;
+    color: #5f6368;
+    font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
+    font-size: 0.875rem;
+    letter-spacing: 0.2px;
+    width: 178px;
+}
+
+
+.EmailAttachmentPreview {
+    height: 85px;
+    width: 100%;
+}
+
+.EmailAttachmentBar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #F5F5F5;
+    height: 32px;
+    width: 100%;
+}
+
+.EmailAttachment__fold {
+    position: relative;
+    width: 0;
+    height: 0;
+}
+
+.EmailAttachment__fold::before {
+    content: "";
+    position: absolute;
+    top: -3px;
+    left: 5px;
+    width: 20px;
+    height: 20px;
+    background:#C4C4C4;
+    clip-path: polygon(100% 100%, 0 100%, 100% 0);
+}
+
+.EmailAttachment__fold::after {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: 25px;
+    width: 20px;
+    height: 20px;
+    background:#FB4C2F;
+    clip-path: polygon(0 0, 0 100%, 100% 0);
+}
+
+.EmailAttachment__corner {
+    position: relative;
+    width: 0;
+    height: 0;
+}
+
+.EmailAttachment__corner::after {
+    content: "";
+    position: absolute;
+    top: -3px;
+    left: 25px;
+    width: 21px;
+    height: 21px;
+    background:#fff;
+    clip-path: polygon(100% 100%, 0 100%, 100% 0);
+}
+
+.EmailAttachment__fileName {
+    font-weight: normal;
+    font-size: 12px;
+    max-width: 90px;
+    min-width: 90px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.EmailAttachment__icon {
+    fill: #5f6368;
+    padding: 10px;
+    padding-top: 13px;
+}
+
+.EmailAttachment__image {
+    position: relative;
+    text-decoration: none;
+}
+
+.EmailAttachment__preview {
+    position: absolute;
+    display: none;
+    z-index: 99;
+    padding: 25px;
+    background-color: white;
+    border: 1px solid black;
+    max-width: 200px;
+}

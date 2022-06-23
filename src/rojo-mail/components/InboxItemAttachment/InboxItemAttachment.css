@@ -20,6 +20,7 @@
 .Attachment__icon {
     fill: #5f6368;
     padding: 10px;
+    padding-top: 13px;
 }
 
 .Attachment__image {

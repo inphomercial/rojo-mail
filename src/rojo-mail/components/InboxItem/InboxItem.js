@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react'
 import MaterialIcon from 'material-icons-react'
 import moment from 'moment'
 
-import { Attachment } from '../Attachment'
+import { InboxItemAttachment } from '../InboxItemAttachment'
 
 import { DUMMY_EMAILS } from '../../utils/consts'
 
@@ -30,7 +30,12 @@ export function InboxItem(props) {
         return (
             <div className="InboxItem__attachments">
                 {preview.images.map((image) => {
-                    return <Attachment key={image.id} source={image.source} />
+                    return (
+                        <InboxItemAttachment
+                            key={image.id}
+                            source={image.source}
+                        />
+                    )
                 })}
             </div>
         )

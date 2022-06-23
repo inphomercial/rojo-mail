@@ -1,11 +1,11 @@
 import React, { useRef } from 'react'
 import MaterialIcon, { colorPalette } from 'material-icons-react'
 
-import './Attachment.css'
+import './InboxItemAttachment.css'
 
 import { DUMMY_FILE_NAMES } from '../../utils/consts'
 
-export function Attachment(props) {
+export function InboxItemAttachment(props) {
     const { source } = props
 
     // Gotta fix the &amp; crap.

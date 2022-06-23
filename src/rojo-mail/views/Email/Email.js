@@ -1,9 +1,11 @@
 import React from 'react'
 
-import { SingleItemBar } from '../../components/SingleItemBar'
-import { PostComments } from '../../components/PostComments'
+import { EmailActionBar } from '../../components/EmailActionBar'
+import { EmailComments } from '../../components/EmailComments'
 import { EmailButton } from '../../components/EmailButton'
 import { EmailSenderHeader } from '../../components/EmailSenderHeader'
+import { EmailAttachment } from '../../components/EmailAttachment'
+import { EmailAttachmentsRow } from '../../components/EmailAttachmentsRow'
 
 import './Email.css'
 
@@ -15,9 +17,27 @@ export function Email(props) {
         return null
     }
 
+    // const renderAttachments = () => {
+    //     const { preview } = data
+
+    //     if (!preview) {
+    //         return null
+    //     }
+
+    //     return (
+    //         <div className="InboxItem__attachments">
+    //             {preview.images.map((image) => {
+    //                 return (
+    //                     <EmailAttachment key={image.id} source={image.source} />
+    //                 )
+    //             })}
+    //         </div>
+    //     )
+    // }
+
     return (
         <div className="SingleView">
-            <SingleItemBar onBack={onBack} />
+            <EmailActionBar onBack={onBack} />
 
             <div className="SingleViewContainer">
                 <div className="SingleViewContent">
@@ -35,6 +55,10 @@ export function Email(props) {
                             />
                         </video>
                     )}
+
+                    {/* {renderAttachments()} */}
+
+                    <EmailAttachmentsRow data={data} />
 
                     <div className="SingleViewContent__content">
                         {data.selftext}
@@ -58,7 +82,7 @@ export function Email(props) {
                 </div>
             </div>
 
-            <PostComments post={data} />
+            <EmailComments post={data} />
 
             <div className="SingleViewFooter">
                 <EmailButton icon="reply" text="Reply" />
